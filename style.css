@@ -174,7 +174,7 @@ ul li {
     font-weight: 600;
     font-size: 0.85rem;
     margin-bottom: 8px;
-    color: var(--dark);
+    /* color: var(--dark); */
 }
 
 .tags {
