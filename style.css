@@ -1,0 +1,71 @@
+:root {
+    --primary: #2c3e50;
+    --accent: #3498db;
+    --text: #333;
+    --bg: #f4f7f6;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+.cv-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+header {
+    border-bottom: 3px solid var(--primary);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+h1 { margin: 0; color: var(--primary); letter-spacing: 1px; }
+.tagline { color: var(--accent); font-weight: bold; margin: 5px 0; }
+.contact-info { font-size: 0.9em; display: flex; flex-wrap: wrap; gap: 15px; }
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+}
+
+h3 {
+    border-left: 4px solid var(--accent);
+    padding-left: 10px;
+    color: var(--primary);
+    text-transform: uppercase;
+    font-size: 1.1em;
+}
+
+.job { margin-bottom: 20px; }
+.job-header { display: flex; justify-content: space-between; font-weight: bold; }
+.company { font-style: italic; color: #666; }
+
+#print-btn {
+    margin-top: 30px;
+    padding: 10px 20px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+@media print {
+    #print-btn { display: none; }
+    body { padding: 0; background: white; }
+    .cv-container { box-shadow: none; width: 100%; }
+}
+
+@media (max-width: 600px) {
+    .main-grid { grid-template-columns: 1fr; }
+}
