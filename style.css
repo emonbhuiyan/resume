@@ -1,121 +1,76 @@
 :root {
-    --primary: #1a1a1a;
-    --accent: #2563eb;
-    --text-main: #374151;
-    --text-light: #6b7280;
-    --bg-light: #f9fafb;
+    --dark: #111827;
+    --blue: #2563eb;
+    --gray: #4b5563;
     --border: #e5e7eb;
 }
 
-* { box-sizing: border-box; }
-
 body {
-    background: var(--bg-light);
-    color: var(--text-main);
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--dark);
+    background-color: #f3f4f6;
     margin: 0;
     padding: 40px 20px;
+    line-height: 1.5;
 }
 
-.cv-wrapper {
-    max-width: 950px;
+.cv-container {
+    max-width: 850px;
     margin: 0 auto;
     background: white;
-    padding: 60px;
-    border: 1px solid var(--border);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
-/* Header Design */
-.main-header {
-    text-align: center;
-    margin-bottom: 50px;
-    border-bottom: 2px solid var(--primary);
-    padding-bottom: 30px;
+header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 3px solid var(--dark);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
 }
 
-h1 {
-    font-size: 2.5rem;
-    font-weight: 300;
-    margin: 0;
-    letter-spacing: -1px;
-    color: var(--primary);
-}
+h1 { margin: 0; font-size: 2rem; letter-spacing: -1px; }
+h1 span { color: var(--blue); }
+.role-title { margin: 5px 0 0; font-weight: 600; color: var(--gray); }
+.header-right { text-align: right; font-size: 0.9rem; color: var(--gray); }
 
-h1 span { font-weight: 800; color: var(--accent); }
-
-.subtitle {
-    font-size: 1.1rem;
-    color: var(--text-light);
-    margin-top: 5px;
+h2 {
     text-transform: uppercase;
-    letter-spacing: 2px;
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+    color: var(--blue);
+    margin-bottom: 15px;
 }
 
-.contact-strip {
-    margin-top: 15px;
-    font-size: 0.9rem;
-    color: var(--text-light);
-}
+.grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; }
 
-.divider { margin: 0 10px; color: var(--border); }
+.item { margin-bottom: 25px; }
+.item-head { display: flex; justify-content: space-between; align-items: center; }
+.item-head h3 { font-size: 1.1rem; margin: 0; }
+.date { font-size: 0.85rem; color: var(--gray); font-weight: 600; }
+.org { color: var(--blue); font-weight: 600; margin: 2px 0 10px; font-size: 0.95rem; }
 
-/* Layout Grid */
-.content-grid {
-    display: grid;
-    grid-template-columns: 1.8fr 1fr;
-    gap: 60px;
-}
+ul { padding-left: 20px; }
+ul li { margin-bottom: 5px; font-size: 0.95rem; }
 
-.section-title {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--accent);
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 8px;
-    margin-bottom: 20px;
-}
+.skills, .edu { font-size: 0.9rem; list-style: none; padding: 0; }
+.edu { margin-bottom: 15px; }
+.edu h4 { margin: 0; }
 
-/* Experience Items */
-.exp-item { margin-bottom: 30px; }
-.exp-header { display: flex; justify-content: space-between; align-items: center; }
-.exp-header h3 { font-size: 1.1rem; margin: 0; color: var(--primary); }
-.date { font-size: 0.85rem; color: var(--text-light); font-weight: 600; }
-.company { color: var(--accent); font-weight: 600; margin-bottom: 10px; }
-
-.bullet-list { padding-left: 18px; margin: 0; }
-.bullet-list li { margin-bottom: 8px; font-size: 0.95rem; }
-
-/* Sidebar Elements */
-.skill-group p { font-size: 0.9rem; margin-bottom: 12px; }
-.edu-item { margin-bottom: 20px; }
-.edu-item h4 { margin: 0; font-size: 1rem; }
-.lang-list { list-style: none; padding: 0; font-size: 0.9rem; }
-
-/* Buttons & Print */
-.action-btn {
-    background: var(--primary);
+.print-btn {
+    margin-top: 30px;
+    padding: 12px 25px;
+    background: var(--dark);
     color: white;
-    padding: 12px 24px;
     border: none;
-    border-radius: 6px;
+    border-radius: 5px;
     cursor: pointer;
     font-weight: 600;
-    transition: background 0.2s;
 }
-
-.action-btn:hover { background: var(--accent); }
 
 @media print {
+    .print-btn { display: none; }
     body { padding: 0; background: white; }
-    .cv-wrapper { box-shadow: none; border: none; padding: 0; }
-    .no-print { display: none; }
-    .content-grid { gap: 40px; }
-}
-
-@media (max-width: 768px) {
-    .content-grid { grid-template-columns: 1fr; }
-    .cv-wrapper { padding: 30px; }
+    .cv-container { box-shadow: none; width: 100%; max-width: none; padding: 0; }
 }
