@@ -1,71 +1,94 @@
 :root {
-    --primary: #2c3e50;
-    --accent: #3498db;
-    --text: #333;
-    --bg: #f4f7f6;
+    --bg: #0d1117;
+    --card-bg: #161b22;
+    --text: #c9d1d9;
+    --accent: #58a6ff;
+    --header-text: #f0f6fc;
+    --border: #30363d;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: var(--bg);
+    background-color: var(--bg);
     color: var(--text);
-    line-height: 1.6;
+    font-family: 'Inter', -apple-system, sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 40px 20px;
 }
 
-.cv-container {
-    max-width: 900px;
+.terminal-container {
+    max-width: 1000px;
     margin: 0 auto;
-    background: white;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
     padding: 40px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-header {
-    border-bottom: 3px solid var(--primary);
-    padding-bottom: 20px;
-    margin-bottom: 30px;
+h1, h3 { color: var(--header-text); }
+h3 { border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-top: 30px; }
+
+.contact-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 15px;
 }
 
-h1 { margin: 0; color: var(--primary); letter-spacing: 1px; }
-.tagline { color: var(--accent); font-weight: bold; margin: 5px 0; }
-.contact-info { font-size: 0.9em; display: flex; flex-wrap: wrap; gap: 15px; }
+.contact-grid a, .contact-grid span {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9em;
+}
 
-.main-grid {
+.layout-grid {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 2fr 1fr;
     gap: 40px;
+    margin-top: 20px;
 }
 
-h3 {
-    border-left: 4px solid var(--accent);
-    padding-left: 10px;
-    color: var(--primary);
-    text-transform: uppercase;
-    font-size: 1.1em;
+.experience-card {
+    margin-bottom: 25px;
 }
 
-.job { margin-bottom: 20px; }
-.job-header { display: flex; justify-content: space-between; font-weight: bold; }
-.company { font-style: italic; color: #666; }
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
 
-#print-btn {
-    margin-top: 30px;
-    padding: 10px 20px;
-    background: var(--primary);
-    color: white;
+.role { color: var(--accent); font-weight: 600; margin-top: 2px; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tags span {
+    background: #21262d;
+    border: 1px solid var(--border);
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.8em;
+}
+
+.edu-item { margin-bottom: 15px; }
+
+.print-btn {
+    background: var(--accent);
+    color: var(--bg);
     border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
     cursor: pointer;
-    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
 }
 
 @media print {
-    #print-btn { display: none; }
-    body { padding: 0; background: white; }
-    .cv-container { box-shadow: none; width: 100%; }
+    .print-btn { display: none; }
+    body { background: white; color: black; padding: 0; }
+    .terminal-container { box-shadow: none; border: none; width: 100%; max-width: none; }
+    h1, h3, .role, .contact-grid a { color: black !important; }
 }
 
-@media (max-width: 600px) {
-    .main-grid { grid-template-columns: 1fr; }
+@media (max-width: 768px) {
+    .layout-grid { grid-template-columns: 1fr; }
 }
