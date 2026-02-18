@@ -254,9 +254,9 @@ ul li {
     .tech-stack { border: 1px solid #ccc; color: #000; }
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .main-grid { grid-template-columns: 1fr; gap: 30px; }
     .header-left, .header-right { text-align: center; }
     .resume-header { flex-direction: column; gap: 20px; }
     .contact-item { text-align: center; }
-}
+} */
