@@ -41,7 +41,7 @@ body {
 }
 
 .header-left h1 {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     color: var(--dark);
     font-weight: 700;
     letter-spacing: -0.03em;
@@ -172,7 +172,7 @@ ul li {
 .skill-category span {
     display: block;
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     margin-bottom: 8px;
     /* color: var(--dark); */
 }
